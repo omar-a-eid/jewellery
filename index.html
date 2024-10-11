@@ -197,8 +197,8 @@
         }
 
         .circle4 {
-            width: 50px;
-            height: 40px;
+            width: 30px;
+            height: 20px;
             border-radius: 50%;
             /* background-image: url(imgs/7.png); */
             background-position: center;
@@ -211,8 +211,8 @@
         }
 
         .circle5 {
-            width: 50px;
-            height: 40px;
+            width: 30px;
+            height: 20px;
             border-radius: 50%;
             /* background-image: url(imgs/6.png); */
             background-position: center;
@@ -238,24 +238,32 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 8px;
+            gap: 10%;
             background: linear-gradient(to bottom, #552C4F, #906678);
             padding: 20px;
-            position: relative;
+            /* position: relative; */
+            position: fixed;
             bottom: 0;
         }
 
         .footer>div {
             display: flex;
-            justify-content: center;
+            justify-content: space-evenly;
             align-items: center;
             gap: 8px;
+        }
+
+        .footer-left{
+            display: flex;
+            flex-direction: column;
         }
 
         span {
             font-size: 10px;
             color: white;
         }
+
+       
 
         .footerHome {
             background-color: #FFE55E;
@@ -279,7 +287,7 @@
             /* Hide overflow */
             white-space: nowrap;
             /* Prevent text from breaking to the next line */
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             margin-top: 15px;
 
         }
@@ -362,12 +370,18 @@
 
         .active-img {
             height: 120px;
-            width: 95px;
+            width: 120px;
             transform: scale(1);
         }
 
         .inactive-img {
             opacity: 0.7;
+        }
+
+        .controls{
+            width: 70px;
+            height: 70px;
+
         }
 
         .carousel-image1,
@@ -397,7 +411,7 @@
             justify-content: center;
             top: 50%;
             transform: translateY(-50%);
-            gap: 10%;
+            gap: 25%;
         }
 
         .carousel-control-prev,
@@ -491,8 +505,8 @@
                     <!-- <div class="dark-overlay"></div> -->
                 </div>
                 <div class="carousel-control">
-                    <img class="active-img" src="imgs/18.png" alt="" onclick="handlePrevImg()">
-                    <img class="active-img" src="imgs/5.png" alt="" onclick="handleNextImg()">
+                    <img class="active-img controls" src="imgs/18.png" alt="" onclick="handlePrevImg()">
+                    <img class="active-img controls" src="imgs/5.png" alt="" onclick="handleNextImg()">
                 </div>
             </div>
             <!-- <div class="carousel-control">
@@ -526,22 +540,22 @@
     </div>
 
     <div class="footer">
-        <div>
+        <div >
             <div class="circle4">
-                <i class="fa-solid fa-phone" style="color: #000000; font-size: 24px;"></i>
+                <i class="fa-solid fa-phone" style="color: #000000; font-size: 12px;"></i>
             </div>
-            <div>
+            <div class="footer-left">
                 <span>Contact Us</span>
-                <span>+199221205</span>
+                <b style="color: white;font-size: 10px;">+199221205</b>
             </div>
         </div>
         <div>
             <div class="circle5">
-                <i class="fa-solid fa-globe" style="color: #000000; font-size: 24px;"></i>
+                <i class="fa-solid fa-globe " style="color: #000000; font-size: 12px;"></i>
             </div>
-            <div>
+            <div class="footer-left">
                 <span>Our Website</span>
-                <span>WWW.reallygreatsite.com</span>
+                <b  style="color: white; font-size: 8px;">WWW.reallygreatsite.com</b>
             </div>
         </div>
         <div class="footerHome">
