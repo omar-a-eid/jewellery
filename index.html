@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"> -->
+
+
+    <script src="https://kit.fontawesome.com/d8d7e278d0.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url('imgs/2.png');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            /* height: 100vh; */
+        }
+
+        .bg {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            margin-top: 25px;
+            position: relative;
+
+        }
+
+        .home {
+            background-color: #FFE55E;
+            width: 120px;
+            border-radius: 20px;
+            padding: 8px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 10px;
+            left: 60%
+        }
+
+        .center {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 15px;
+            padding-left: 8px;
+            padding-right: 8px;
+            color: white;
+        }
+
+        .center>h2 {
+            color: #FFE55E;
+        }
+
+        .center>span>h1 {
+            border-bottom: solid #FFE55E;
+            font-size: 20px;
+            padding-bottom: 10px;
+        }
+
+        .center>p {
+            padding: 12px;
+            font-size: 17px;
+        }
+
+
+        .images {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 125px;
+            position: relative;
+        }
+
+        /* .inactive-img {
+            width: 100px;
+            height: 100px;
+        } */
+
+        .inactive-img {
+            opacity: 0.7;
+            position: relative;
+            z-index: 1;
+            width: 100px;
+            height: 100px;
+        }
+
+        .inactive-img::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Overlay color */
+            z-index: 2;
+        }
+
+        .active-img {
+
+            height: 110px;
+            width: 100px;
+        }
+
+        .carousel-image1 {
+
+            background-image: url(imgs/11.png);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .carousel-image2 {
+
+            background-image: url(imgs/13.png);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .carousel-image3 {
+
+            background-image: url(imgs/12.png);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .carousel-control {
+            position: absolute;
+            display: flex;
+            width: 100vw;
+            justify-content: space-around;
+            z-index: 3;
+
+
+        }
+
+        .contacts {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+
+        }
+
+        .circle1 {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-image: url(imgs/8.png);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: #683C5A;
+        }
+
+        .circle2 {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-image: url(imgs/9.png);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: #683C5A;
+        }
+
+        .circle3 {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-image: url(imgs/10.png);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: #683C5A;
+        }
+
+        .circle4 {
+            width: 50px;
+            height: 40px;
+            border-radius: 50%;
+            /* background-image: url(imgs/7.png); */
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: #FFE55E;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .circle5 {
+            width: 50px;
+            height: 40px;
+            border-radius: 50%;
+            /* background-image: url(imgs/6.png); */
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-color: #FFE55E;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .circles {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            justify-content: center;
+            align-items: center;
+            padding-top: 16px;
+        }
+
+        .footer {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(to bottom, #552C4F, #906678);
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+        }
+
+        .footer>div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        span {
+            font-size: 10px;
+            color: white;
+        }
+
+        .footerHome {
+            background-color: #FFE55E;
+            width: 120px;
+            border-radius: 20px;
+            padding: 8px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: -20px;
+            left: 32%;
+        }
+
+        .scroll-container {
+            width: 100%;
+            /* Full width */
+            height: 30px;
+            overflow: hidden;
+            /* Hide overflow */
+            white-space: nowrap;
+            /* Prevent text from breaking to the next line */
+            margin-bottom: 15px;
+            margin-top: 15px;
+
+        }
+
+        /* The moving text */
+        .scroll-text {
+            color: #D93223;
+            width: 100%;
+            height: 20px;
+            display: inline-block;
+            /* Display text inline without wrapping */
+            padding-left: 100%;
+            /* Start the text off-screen */
+            animation: scroll 20s linear infinite;
+            /* Scroll animation, adjust the duration */
+        }
+
+        @keyframes scroll {
+            from {
+                transform: translateX(100%);
+                /* Start at right */
+            }
+
+            to {
+                transform: translateX(-300%);
+                /* End at left */
+            }
+        }
+
+        .carousel {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0px 10px;
+            position: relative;
+            width: 100%;
+        }
+
+        .image-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .image-container img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .dark-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+
+        .carousel {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .inactive-img,
+        .active-img {
+            width: 90px;
+            height: 90px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .active-img {
+            height: 120px;
+            width: 95px;
+            transform: scale(1);
+        }
+
+        .inactive-img {
+            opacity: 0.7;
+        }
+
+        .carousel-image1,
+        .carousel-image2,
+        .carousel-image3 {
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .carousel-image1 {
+            background-image: url('imgs/11.png');
+        }
+
+        .carousel-image2 {
+            background-image: url('imgs/13.png');
+        }
+
+        .carousel-image3 {
+            background-image: url('imgs/12.png');
+        }
+
+        .carousel-control {
+            position: absolute;
+            display: flex;
+            width: 100vw;
+            justify-content: center;
+            top: 50%;
+            transform: translateY(-50%);
+            gap: 10%;
+        }
+
+        .carousel-control-prev,
+        .carousel-control-next {
+            cursor: pointer;
+        }
+        /* Media Queries for Responsiveness */
+@media (min-width: 768px) {
+    .center h1 {
+        font-size: 20px;
+    }
+    .carousel {
+        width: 100%;
+        justify-content: space-around;
+    }
+    .carousel-control .control-img {
+        width: 30px;
+        height: 30px;
+    }
+    .footerHome{
+        left: 42%;
+    }
+    .footer{
+        gap: 180px;
+        bottom: 0;
+        position: fixed;
+    }
+    .home{
+        left: 80%;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .center h1 {
+        font-size: 18px;
+    }
+    .carousel {
+        width: 100%;
+    }
+    .carousel-control .control-img {
+        width: 25px;
+        height: 25px;
+    }
+    .logo {
+        width: 90px;
+    }
+    .home {
+        max-width: 150px;
+    }
+}
+    </style>
+
+
+    <div class="main">
+
+
+        <div class="bg">
+            <img width="100px" height="auto" src="imgs/17.png" alt="">
+        </div>
+
+        <div class="home">
+            <div>
+                الصفحة الرئيسية
+            </div>
+        </div>
+
+        <div class="center">
+            <h2>مجوهرات فاخرة</h2>
+            <span>
+                <h1>WEBSITE DEVELOPMENT</h1>
+            </span>
+            <p>نحن نبيع ونشتري أرقى الذهب والمجوهرات المستعملة بأسعار يمكن الوصول إليها بسهولة وبضمان فضي</p>
+
+        </div>
+
+        <div class="images">
+            <!-- <div class="carousel-control">
+                <img class="active-img" src="imgs/18.png" alt="">
+            </div> -->
+            <div class="carousel">
+                <div class="image-container">
+                    <div class="inactive-img carousel-image1"></div>
+                    <!-- <div class="dark-overlay"></div> -->
+                </div>
+                <div>
+                    <div class="active-img carousel-image2"></div>
+                </div>
+                <div class="image-container">
+                    <div class="inactive-img carousel-image3"></div>
+                    <!-- <div class="dark-overlay"></div> -->
+                </div>
+                <div class="carousel-control">
+                    <img class="active-img" src="imgs/18.png" alt="" onclick="handlePrevImg()">
+                    <img class="active-img" src="imgs/5.png" alt="" onclick="handleNextImg()">
+                </div>
+            </div>
+            <!-- <div class="carousel-control">
+                <img class="active-img" src="imgs/5.png" alt="">
+            </div> -->
+
+        </div>
+
+
+        <div class="contacts">
+            <div class="circles">
+                <div class="circle1"></div>
+                <h4>فروعنا</h4>
+            </div>
+            <div class="circles">
+                <div class="circle2"></div>
+                <h4>تواصل معنا</h4>
+            </div>
+            <div class="circles">
+                <div class="circle3"></div>
+                <h4>اسعار الذهب</h4>
+            </div>
+
+        </div>
+
+
+        <div class="scroll-container">
+            <p class="scroll-text">إثنتان واحدة لك و واحدة لصديقتك
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; نشري منك القطع الأصلية دون فاتورة</p>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div>
+            <div class="circle4">
+                <i class="fa-solid fa-phone" style="color: #000000; font-size: 24px;"></i>
+            </div>
+            <div>
+                <span>Contact Us</span>
+                <span>+199221205</span>
+            </div>
+        </div>
+        <div>
+            <div class="circle5">
+                <i class="fa-solid fa-globe" style="color: #000000; font-size: 24px;"></i>
+            </div>
+            <div>
+                <span>Our Website</span>
+                <span>WWW.reallygreatsite.com</span>
+            </div>
+        </div>
+        <div class="footerHome">
+            <div>
+                الصفحة الرئيسية
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+    <script>
+        let currentIndex = 1; 
+
+        const images = [
+            document.querySelector('.carousel-image1'),
+            document.querySelector('.carousel-image2'),
+            document.querySelector('.carousel-image3')
+        ];
+
+        function updateCarousel() {
+            images.forEach((img, index) => {
+                if (index === currentIndex) {
+                    img.classList.remove('inactive-img');
+                    img.classList.add('active-img');
+                } else {
+                    img.classList.remove('active-img');
+                    img.classList.add('inactive-img');
+                }
+            });
+        }
+
+        function handlePrevImg() {
+            currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+            updateCarousel();
+        }
+
+        function handleNextImg() {
+            currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+            updateCarousel();
+        }
+
+        updateCarousel();
+
+    </script>
+
+
+
+</body>
+
+</html>
