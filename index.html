@@ -30,7 +30,7 @@
 
         .bg {
             width: 100%;
-            height: 100px;
+            height: 90px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -253,7 +253,7 @@
             gap: 8px;
         }
 
-        .footer-left{
+        .footer-left {
             display: flex;
             flex-direction: column;
         }
@@ -262,8 +262,6 @@
             font-size: 10px;
             color: white;
         }
-
-       
 
         .footerHome {
             background-color: #FFE55E;
@@ -319,16 +317,11 @@
 
         .carousel {
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             align-items: center;
             gap: 0px 10px;
             position: relative;
             width: 100%;
-        }
-
-        .image-container {
-            position: relative;
-            display: inline-block;
         }
 
         .image-container img {
@@ -347,18 +340,13 @@
         }
 
 
-        .carousel {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-        }
-
         .image-container {
             display: flex;
             justify-content: center;
             align-items: center;
             position: relative;
+            display: inline-block;
+
         }
 
         .inactive-img,
@@ -378,7 +366,7 @@
             opacity: 0.7;
         }
 
-        .controls{
+        .controls {
             width: 70px;
             height: 70px;
 
@@ -418,51 +406,202 @@
         .carousel-control-next {
             cursor: pointer;
         }
+
+        .paragraph {
+            /* background-image: url(imgs/4.png); */
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 90%;
+            height: 60px;
+        }
+
+        .top {
+            background-image: url(imgs/15.png);
+            border-bottom: #FFE55E solid;
+        }
+
+        .bot {
+            background-image: url(imgs/4.png);
+            margin-bottom: 0px;
+            margin-top: -3px;
+
+        }
+
         /* Media Queries for Responsiveness */
-@media (min-width: 768px) {
-    .center h1 {
-        font-size: 20px;
-    }
-    .carousel {
-        width: 100%;
-        justify-content: space-around;
-    }
-    .carousel-control .control-img {
-        width: 30px;
-        height: 30px;
-    }
-    .footerHome{
-        left: 42%;
-    }
-    .footer{
-        gap: 180px;
-        bottom: 0;
-        position: fixed;
-    }
-    .home{
-        left: 80%;
-    }
 
-}
+        @media (min-width: 480px) and (max-width: 600px) {
+            .bot {
+                max-width: 60%;
+                height: 65px;
+                margin: 0 auto;
+            }
 
-@media (max-width: 480px) {
-    .center h1 {
-        font-size: 18px;
-    }
-    .carousel {
-        width: 100%;
-    }
-    .carousel-control .control-img {
-        width: 25px;
-        height: 25px;
-    }
-    .logo {
-        width: 90px;
-    }
-    .home {
-        max-width: 150px;
-    }
-}
+            .top {
+                max-width: 54%;
+                height: 65px;
+                margin: 0 auto;
+            }
+            .footerHome{
+                left:40% ;
+            }
+            .active-img{
+                width: 130px;
+                height: 130px;
+                transform: scale(1);
+            }
+            .inactive-img{
+                width: 110px;
+                height: 110px;
+                transform: scale(1);
+            }
+            .carousel {
+                width: 100%;
+            }
+
+            .carousel-control .control-img {
+                width: 25px;
+                height: 25px;
+            }
+            
+        }
+
+        @media (min-width: 840px) and (max-width: 1440px) {
+            .bot {
+                max-width: 25% !important;
+                height: 65px;
+                margin: 0 auto;
+            }
+
+            .top {
+                max-width: 25% !important;
+                height: 65px;
+                margin: 0 auto;
+            }
+            .footerHome{
+                left:40% ;
+            }
+            .active-img{
+                width: 130px;
+                height: 130px;
+                transform: scale(1);
+            }
+            .inactive-img{
+                width: 110px;
+                height: 110px;
+                transform: scale(1);
+            }
+            .carousel {
+                width: 100%;
+            }
+
+            .carousel-control .control-img {
+                width: 25px;
+                height: 25px;
+            }
+            
+        }
+
+        @media (min-width: 601px) and (max-width: 779px) {
+            .bot {
+                max-width: 50%;
+                height: 65px;
+                margin: 0 auto;
+            }
+
+            .top {
+                max-width: 43%;
+                height: 65px;
+                margin: 0 auto;
+            }
+            .footerHome{
+                left:40% ;
+            }
+            .active-img{
+                width: 130px;
+                height: 130px;
+                transform: scale(1);
+            }
+            .inactive-img{
+                width: 110px;
+                height: 110px;
+                transform: scale(1);
+            }
+
+        }
+
+        @media (min-width: 347px) and (max-width: 480px) {
+            .bot {
+                max-width: 80%;
+                height: 65px;
+                margin: 0 auto;
+            }
+
+            .top {
+                max-width: 74%;
+                height: 65px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .paragraph {
+                max-height: 65px;
+                max-width: 38%;
+            }
+
+            .center h1 {
+                font-size: 20px;
+            }
+
+            .carousel {
+                width: 100%;
+                justify-content: space-around;
+            }
+
+            .carousel-control .control-img {
+                width: 30px;
+                height: 30px;
+            }
+
+            .footerHome {
+                left: 42%;
+            }
+
+            .footer {
+                gap: 180px;
+                bottom: 0;
+                position: fixed;
+            }
+
+            .home {
+                left: 80%;
+            }
+
+        }
+
+        @media (max-width: 480px) {
+            .center h1 {
+                font-size: 18px;
+            }
+
+            .carousel {
+                width: 100%;
+            }
+
+            .carousel-control .control-img {
+                width: 25px;
+                height: 25px;
+            }
+
+            .logo {
+                width: 90px;
+            }
+
+            .home {
+                max-width: 150px;
+            }
+        }
     </style>
 
 
@@ -480,11 +619,14 @@
         </div>
 
         <div class="center">
-            <h2>مجوهرات فاخرة</h2>
+            <!-- <h2>مجوهرات فاخرة</h2>
             <span>
                 <h1>WEBSITE DEVELOPMENT</h1>
-            </span>
-            <p>نحن نبيع ونشتري أرقى الذهب والمجوهرات المستعملة بأسعار يمكن الوصول إليها بسهولة وبضمان فضي</p>
+            </span> -->
+            <!-- <p>نحن نبيع ونشتري أرقى الذهب والمجوهرات المستعملة بأسعار يمكن الوصول إليها بسهولة وبضمان فضي</p> -->
+
+            <div class="paragraph top"></div>
+            <div class="paragraph bot"></div>
 
         </div>
 
@@ -505,8 +647,8 @@
                     <!-- <div class="dark-overlay"></div> -->
                 </div>
                 <div class="carousel-control">
-                    <img class="active-img controls" src="imgs/18.png" alt="" onclick="handlePrevImg()">
-                    <img class="active-img controls" src="imgs/5.png" alt="" onclick="handleNextImg()">
+                    <img class=" controls" src="imgs/18.png" alt="" onclick="handlePrevImg()">
+                    <img class=" controls" src="imgs/5.png" alt="" onclick="handleNextImg()">
                 </div>
             </div>
             <!-- <div class="carousel-control">
@@ -540,7 +682,7 @@
     </div>
 
     <div class="footer">
-        <div >
+        <div>
             <div class="circle4">
                 <i class="fa-solid fa-phone" style="color: #000000; font-size: 12px;"></i>
             </div>
@@ -555,7 +697,7 @@
             </div>
             <div class="footer-left">
                 <span>Our Website</span>
-                <b  style="color: white; font-size: 8px;">WWW.reallygreatsite.com</b>
+                <b style="color: white; font-size: 8px;">WWW.reallygreatsite.com</b>
             </div>
         </div>
         <div class="footerHome">
@@ -570,7 +712,7 @@
 
 
     <script>
-        let currentIndex = 1; 
+        let currentIndex = 1;
 
         const images = [
             document.querySelector('.carousel-image1'),
