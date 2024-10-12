@@ -47,7 +47,7 @@
 
         .home {
             background-color: #FFE55E;
-            width: 120px;
+            width: fit-content;
             border-radius: 20px;
             padding: 8px;
             font-weight: bold;
@@ -276,7 +276,7 @@
 
         .footerHome {
             background-color: #FFE55E;
-            width: 120px;
+            width: fit-content;
             border-radius: 20px;
             padding: 8px;
             font-weight: bold;
@@ -564,6 +564,51 @@
 
             .home {
                 max-width: 150px;
+            }
+        }
+
+        @media (max-height: 800px) {
+            .top {
+                max-width: 250px;
+                margin: 0.2em 0;
+            }
+            .bot {
+                margin-bottom: 1em ;
+                margin-top:0.5em;
+            }
+            .inactive-img {
+                height: 15vh;
+            }
+            .active-img {
+                height: 20vh;
+            }
+            .circle1, .circle2, .circle3 {
+                height: 7vh;
+                width: 7vh;
+            }
+        }
+
+        @media (max-height: 650px) {
+            .bg img {
+                width: 90px;
+                padding: 10px 0;
+            }
+        }
+        
+        @media (max-height: 580px) {
+            .bg img {
+                width: 70px;
+                padding: 10px 0;
+            }
+            .top {
+                max-width: 200px;
+                margin: 0.2em 0;
+            }
+            .bot {
+                max-width: 250px;
+            }
+            .bot {
+                margin-bottom: 0.2em ;
             }
         }
     </style>
